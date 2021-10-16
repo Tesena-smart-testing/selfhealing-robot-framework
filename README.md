@@ -7,7 +7,7 @@ This solution is based on the Healenium Docker containers for Python provided by
 
 ## Prerequisities:
 1. install and run Docker Desktop: https://www.docker.com/products/docker-desktop
-2. in the project directory, start commandline terminal and execute following commands:
+2. in the project directory, start commandline terminal and start the Healenium Docker containers:
    * ```cd infra```
    * ```docker-compose up -d```
    * ```docker ps``` 
@@ -17,7 +17,7 @@ This solution is based on the Healenium Docker containers for Python provided by
    * healenium/hlm-proxy:1.0
    * healenium/hlm-selenium-4-standalone-xpra:1.0
    * healenium/hlm-selector-imitator:1
-4. open http://localhost:8086 in your browser, wait till the WebSocket Connection is established
+4. open http://localhost:8086 in your browser and wait till the WebSocket Connection is established
 5. in the commandline terminal, return to the project root from the infra folder:
    * ```cd ..```
 
