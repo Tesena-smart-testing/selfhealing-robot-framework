@@ -6,7 +6,7 @@ Suite Teardown  Close browser
 
 *** Variables ***
 ${URL}                  https://sha-test-app.herokuapp.com
-${click_me_btn}         //button[contains(@class,'default-btn')]
+${click_me_btn}         xpath=//button[contains(@class,'default-btn')]
 ${generate_markup_btn}  id=markup-generation-button
 
 *** Test Cases ***

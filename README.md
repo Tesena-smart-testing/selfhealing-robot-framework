@@ -23,4 +23,4 @@ This solution is based on the Healenium Docker containers for Python provided by
 
 ## How to run the tests:
 Using commandline:
-   * ```robot tests.robot```
+   * ```robot tests\test.robot```
