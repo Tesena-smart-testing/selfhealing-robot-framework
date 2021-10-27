@@ -21,10 +21,11 @@ This solution is based on the Healenium Docker containers for Python provided by
    * healenium/hlm-proxy:1.0
    * healenium/hlm-selenium-4-standalone-xpra:1.0
    * healenium/hlm-selector-imitator:1
-6. open http://localhost:8086 in your browser and wait till the WebSocket Connection is established
-7. in the commandline terminal, return to the project root from the infra folder:
+6. in the commandline terminal, return to the project root from the infra folder:
    * ```cd ..```
+7. open http://localhost:8086 in your browser and wait till the WebSocket Connection is established
+
 
 ## How to run the tests:
-Using commandline:
+Using commandline from project root:
    * ```robot tests\test.robot```
