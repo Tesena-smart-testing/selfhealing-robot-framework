@@ -1,5 +1,5 @@
 *** Settings ***
-Library   src\\HealeniumLibraryPythonUsingListener.py
+Library   src\\HealeniumLibrary.py
 
 Suite Setup  Open Selfhealing Browser   ${url}
 Suite Teardown  Close browser
