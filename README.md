@@ -11,10 +11,10 @@ This solution is based on the Healenium Docker containers for Python provided by
 2. install required libraries using pip:
    * ```pip install -r requirements.txt```
 3. install and run Docker Desktop: https://www.docker.com/products/docker-desktop
-4. in the project directory, start commandline terminal and start the Healenium Docker containers:
-   * ```cd infra```
-   * ```docker-compose up -d```
-   * ```docker ps``` 
+4. in the project directory, start commandline terminal and start the Healenium Docker containers using following commands:
+   * ```cd infra``` - navigate to infra folder
+   * ```docker-compose up -d``` - download Docker images and create containers
+   * ```docker ps``` - list the created containers
 5. verify that following containers are up and running (either in the previous terminal output or directly in Docker Desktop client): 
    * healenium/hlm-backend:3.1.2 
    * postgres:11-alpine
