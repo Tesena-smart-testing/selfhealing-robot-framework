@@ -41,7 +41,7 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:1.0
+    image: healenium/hlm-proxy:0.1.0
     container_name: hlm-proxy
     ports:
       - "8085:8085"
