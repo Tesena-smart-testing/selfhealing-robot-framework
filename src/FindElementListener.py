@@ -6,5 +6,5 @@ from robot.api import logger
 class FindElementListener(AbstractEventListener):
 
     def before_find(self, by, value, driver):
-        logger.info("Healenium searching for element %s" % value)
+        logger.info("Applying listener to pre-find the element %s for Healenium" % value)
         driver.find_element(by, value)
