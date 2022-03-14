@@ -4,3 +4,4 @@ report.html
 selenium-screenshot-*.png
 .idea
 *.pyc
+venv
