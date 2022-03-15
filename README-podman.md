@@ -4,11 +4,11 @@ Podman is used as an alternative to Docker, which could be a security issue in s
 This guide offers a solution for Ubuntu OS.
 
 ## Python
-- install python3: ```sudo apt install python3```
+- install python: ```sudo apt install python3```
 - install pip: ```sudo apt install python3-pip```
-- install virtual environment: ```sudo apt install python3.8-venv```
+- install python virtual environment: ```sudo apt install python3.8-venv```
 ## Podman
-- install podman: https://www.cyberithub.com/how-to-install-podman-on-ubuntu-20-04-lts-step-by-step/
+- install Podman: https://www.cyberithub.com/how-to-install-podman-on-ubuntu-20-04-lts-step-by-step/
 - if there is a problem with public key signature, follow https://linuxconfig.org/ubuntu-20-04-gpg-error-the-following-signatures-couldn-t-be-verified
 - install podman-compose: ```sudo pip3 install podman-compose```
 ## Selenium Browser Driver
@@ -20,11 +20,12 @@ This guide offers a solution for Ubuntu OS.
 - install git: ```sudo apt install git```
 - in Terminal, navigate to the folder where you want to place the project directory and execute ```git clone https://github.com/Tesena-smart-testing/selfhealing-robot-framework.git```
 ## Install Robot Framework Libraries
-- first, create the virtual environment: ```python3 -m venv ./venv```
+- in Terminal, navigate to the selfhealing robot framework project directory
+- create the virtual environment: ```python3 -m venv ./venv```
 - activate the virtual environment: ```source venv/bin/activate```
 - install libraries: ```pip install -r requirements.txt```
 ## Start Docker containers using Podman
-- in the selfhealing robot framework project directory, navigate to infra folder: ```cd infra```
+- navigate to infra folder: ```cd infra```
 - start the containers: ```podman-compose up -d```
 - when prompted, select the images from docker.io server
 ## Execute tests:
