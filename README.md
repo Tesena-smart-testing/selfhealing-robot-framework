@@ -14,7 +14,7 @@ Please note that this is just a *proof of concept*, therefore the only supported
 5. **unzip the driver** into some folder (for example C:\WebDrivers or any directory)
 6. add the above created **driver path into your System Environment Path**: https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/
 2. using commandline, navigate to the project root and **activate the virtual environment**
-   * ```venv/Scripts/activate.bat```
+   * ```.\venv\Scripts\activate```
 3. **install required libraries** using pip:
    * ```pip install -r requirements.txt```
 7. install and **run Docker Desktop**: https://www.docker.com/products/docker-desktop
