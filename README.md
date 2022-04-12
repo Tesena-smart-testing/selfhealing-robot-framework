@@ -34,4 +34,4 @@ Please note that this is just a *proof of concept*, therefore the only supported
 
 ## How to execute tests
 Using commandline from project root:
-   * ```robot tests\test.robot```
+   * ```robot tests\healenium_test.robot```
