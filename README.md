@@ -30,8 +30,8 @@ Please note that this is just a *proof of concept*, therefore the only supported
    * healenium/hlm-selector-imitator
 10. in the commandline terminal, **return to the project root** from the infra folder:
     * ```cd ..```
-11. **open http://localhost:8086** in your browser and wait till the WebSocket Connection is established
 
 ## How to execute tests
 Using commandline from project root:
-   * ```robot tests\healenium_test.robot```
+   * ```robot -d results tests\healenium_test.robot```
+To see the test execution, you can open http://localhost:8086 in your browser

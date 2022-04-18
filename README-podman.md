@@ -29,4 +29,5 @@ This guide offers a solution for Ubuntu OS.
 - start the containers: ```podman-compose up -d```
 - when prompted, select the images from docker.io server
 ## Execute tests:
-```robot tests\test.robot```
+Using commandline terminal from project root: ```robot -d results tests\healenium_test.robot```
+To see the test execution, you can open http://localhost:8086 in your browser
