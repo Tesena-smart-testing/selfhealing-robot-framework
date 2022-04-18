@@ -17,8 +17,6 @@ Click me button test
 
 Click me button test with healing
     [Documentation]  Test the selfhealing functionality of Healenium
-    Click Element   ${click_me_btn}
-    Handle Alert    action=ACCEPT
     Click Element   ${generate_markup_btn}  # generate new layout -> locators going to change
     Click Element   ${click_me_btn}  # should be healed
     Handle Alert    action=ACCEPT

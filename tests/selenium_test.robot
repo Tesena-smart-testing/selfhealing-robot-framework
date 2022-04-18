@@ -17,8 +17,6 @@ Click me button test
 
 Click me button test with healing
     [Documentation]  Test the change of layout
-    Click Element   ${click_me_btn}
-    Handle Alert    action=ACCEPT
     Click Element   ${generate_markup_btn}  # generate new layout -> locators going to change
     Click Element   ${click_me_btn}  # should fail
     Handle Alert    action=ACCEPT
