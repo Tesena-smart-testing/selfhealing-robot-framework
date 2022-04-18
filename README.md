@@ -9,7 +9,7 @@ This is solution is based on the Healenium Docker containers for Python provided
 Please note that this is just a *proof of concept*, therefore the only supported browser at this moment is **Google Chrome**. Also, the solution has been tested on **Windows OS** only.
 
 ## Prerequisities
-1. install **Python** v3.7 or newer: https://www.python.org/downloads
+1. install **Python** v3.9 or newer: https://www.python.org/downloads
 4. **download Google Chrome browser driver**. Please check the version of your browser and OS to choose the right driver version: https://chromedriver.chromium.org/downloads
 5. **unzip the driver** into some folder (for example C:\WebDrivers or any directory)
 6. add the above created **driver path into your System Environment Path**: https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/
@@ -23,11 +23,11 @@ Please note that this is just a *proof of concept*, therefore the only supported
    * ```docker-compose up -d``` - download Docker images and create containers
    * ```docker ps``` - list the created containers
 9. verify that following **containers are up and running** (either in the previous terminal output or directly in Docker Desktop client): 
-   * healenium/hlm-backend:3.1.2 
+   * healenium/hlm-backend 
    * postgres:11-alpine
-   * healenium/hlm-proxy:1.0
-   * healenium/hlm-selenium-4-standalone-xpra:1.0
-   * healenium/hlm-selector-imitator:1
+   * healenium/hlm-proxy
+   * healenium/hlm-selenium-4-standalone-xpra
+   * healenium/hlm-selector-imitator
 10. in the commandline terminal, **return to the project root** from the infra folder:
     * ```cd ..```
 11. **open http://localhost:8086** in your browser and wait till the WebSocket Connection is established

@@ -7,7 +7,7 @@ from robot.api.deco import keyword
 from SeleniumLibrary import SeleniumLibrary
 from selenium import webdriver
 from SeleniumLibrary.keywords import BrowserManagementKeywords
-from FindElementListener import FindElementListener
+#from FindElementListener import FindElementListener
 from selenium.webdriver.support.events import EventFiringWebDriver
 
 class HealeniumLibrary(SeleniumLibrary):
@@ -20,9 +20,6 @@ class HealeniumLibrary(SeleniumLibrary):
             command_executor="http://localhost:8085",
             desired_capabilities=webdriver.DesiredCapabilities.CHROME,
             options=options)
-
-        # register FindElementListener
-        self.healeniumdriver = EventFiringWebDriver(self.healeniumdriver, FindElementListener())
 
         # register WebDriver in SeleniumLibrary of Robot Framework
         browser_management = BrowserManagementKeywords(self)
