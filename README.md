@@ -6,14 +6,13 @@ Read more about this tool at https://healenium.io
 This is solution is based on the Healenium Docker containers for Python provided by the open-source project at https://github.com/healenium/healenium-example-python
 
 ## Disclaimer
-Please note that this is just a *proof of concept*, therefore the only supported browser at this moment is **Google Chrome**. Also, the solution has been tested on **Windows OS** only.
+Please note that this is just a **proof of concept**, testing and debugging is still ongoing. 
+
+We would be happy to know your comments or issues on following e-mail: lucie.lavickova@tesena.com
 
 ## Prerequisities
-1. install **Python** v3.9 or newer: https://www.python.org/downloads
-4. **download Google Chrome browser driver**. Please check the version of your browser and OS to choose the right driver version: https://chromedriver.chromium.org/downloads
-5. **unzip the driver** into some folder (for example C:\WebDrivers or any directory)
-6. add the above created **driver path into your System Environment Path**: https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/
-2. using commandline, navigate to the project root and **activate the virtual environment**
+1. install **Python** v3.9 or newer: https://www.python.org/downloads, including **pip**
+2. using commandline terminal, navigate to the project root and **activate the virtual environment**
    * ```.\venv\Scripts\activate```
 3. **install required libraries** using pip:
    * ```pip install -r requirements.txt```
@@ -34,4 +33,5 @@ Please note that this is just a *proof of concept*, therefore the only supported
 ## How to execute tests
 Using commandline from project root:
    * ```robot -d results tests\healenium_test.robot```
-To see the test execution, you can open http://localhost:8086 in your browser
+
+To see the test execution, you can open http://localhost:8086 in your browser (replace localhost by the name of your server if running remotely)
