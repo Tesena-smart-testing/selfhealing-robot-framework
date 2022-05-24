@@ -25,7 +25,7 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
    * postgres:11-alpine
    * healenium/hlm-proxy
    * healenium/hlm-selenium-4-standalone-xpra
-   * healenium/hlm-selector-imitator`
+   * healenium/hlm-selector-imitator
 
 ## How to execute tests
 Using commandline from project root:
