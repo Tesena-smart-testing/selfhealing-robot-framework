@@ -24,7 +24,6 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 - activate the virtual environment: ```source venv/bin/activate```
 - install libraries: ```pip install -r requirements.txt```
 ## Start Docker containers using Podman
-- navigate to infra folder: ```cd infra```
 - start the containers: ```podman-compose up -d```
 - if prompted, select the images from docker.io server
 ## Execute tests:

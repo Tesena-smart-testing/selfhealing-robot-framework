@@ -18,7 +18,6 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
    * ```pip install -r requirements.txt```
 7. install and **run Docker Desktop**: https://www.docker.com/products/docker-desktop
 8. in the project directory, start commandline terminal and **start the Healenium Docker containers** using following commands:
-   * ```cd infra``` - navigate to infra folder
    * ```docker-compose up -d``` - download Docker images and create containers
    * ```docker ps``` - list the created containers
 9. verify that following **containers are up and running** (either in the previous terminal output or directly in Docker Desktop client): 
@@ -26,9 +25,7 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
    * postgres:11-alpine
    * healenium/hlm-proxy
    * healenium/hlm-selenium-4-standalone-xpra
-   * healenium/hlm-selector-imitator
-10. in the commandline terminal, **return to the project root** from the infra folder:
-    * ```cd ..```
+   * healenium/hlm-selector-imitator`
 
 ## How to execute tests
 Using commandline from project root:
