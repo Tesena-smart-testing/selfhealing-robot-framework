@@ -2,3 +2,4 @@ robotframework
 robotframework-seleniumlibrary
 robotframework-pythonlibcore
 selenium
+docker
