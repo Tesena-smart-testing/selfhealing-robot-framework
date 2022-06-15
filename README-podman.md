@@ -21,6 +21,7 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 - in commandline terminal, navigate to the folder where you want to place the project directory and execute ```git clone https://github.com/Tesena-smart-testing/selfhealing-robot-framework.git```
 ## Install Robot Framework Libraries
 - in commandline terminal, navigate to the project directory
+- create a new virtual environment: ```python -m venv venv```
 - activate the virtual environment: ```source venv/bin/activate```
 - install libraries: ```pip install -r requirements.txt```
 ## Start Docker containers using Podman

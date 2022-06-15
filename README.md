@@ -12,7 +12,8 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 
 ## Prerequisities
 1. install **Python** v3.9 or newer: https://www.python.org/downloads, including **pip**
-2. using commandline terminal, navigate to the project root and **activate the virtual environment**
+2. using commandline terminal, navigate to the project root and **create a new virtual environment and activate it**
+   * ```python -m venv venv```
    * ```.\venv\Scripts\activate```
 3. **install required libraries** using pip:
    * ```pip install -r requirements.txt```
