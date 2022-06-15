@@ -1,8 +1,9 @@
 *** Settings ***
 Library   SeleniumLibrary
+Library   ..\\src\\healenium_log.py
 
 Suite Setup  Open web application    ${url}    firefox    ${selenium_grid_url}
-Suite Teardown  Close browser
+Suite Teardown  Run keywords     Close browser    AND     Log Healenium Report Link
 
 *** Variables ***
 ${url}                  https://sha-test-app.herokuapp.com
@@ -34,3 +35,7 @@ Open web application
     ELSE
         Open Browser  url=${url}  browser=${browser}  remote_url=${selenium_grid_url}
     END
+
+Log Healenium Report Link
+    ${report_link}    Get Healenium Report Link
+    Log    Healenium ${report_link}   WARN
