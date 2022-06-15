@@ -3,3 +3,4 @@ robotframework-seleniumlibrary
 robotframework-pythonlibcore
 selenium
 docker
+regex
