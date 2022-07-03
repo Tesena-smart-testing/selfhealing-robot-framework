@@ -1,6 +1,6 @@
 *** Settings ***
 Library   SeleniumLibrary
-Library   ..\\src\\healenium_log.py
+Library   ../src/healenium_log.py
 
 Suite Setup  Open web application    ${url}    firefox    ${selenium_grid_url}
 Suite Teardown  Run keywords     Close browser    AND     Log Healenium Report Link
