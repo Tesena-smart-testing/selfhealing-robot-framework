@@ -5,6 +5,7 @@ services:
     image: postgres:11-alpine
     ports:
       - "5432:5432"
+    # Comment out following lines (volumes) when you run on macOs Docker Desktop
     volumes:
       - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
