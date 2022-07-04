@@ -13,8 +13,8 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 ## Prerequisities
 1. install **Python** v3.9 or newer: https://www.python.org/downloads, including **pip**
 2. using commandline terminal, navigate to the project root and **create a new virtual environment and activate it**
-   * ```python -m venv venv```
-   * ```.\venv\Scripts\activate```
+   * ```python -m venv venv``` or for MacOs `python3 -m venv venv`
+   * ```.\venv\Scripts\activate``` or for MacOs `source venv/bin/activate`
 3. **install required libraries** using pip:
    * ```pip install -r requirements.txt```
 7. install and **run Docker Desktop**: https://www.docker.com/products/docker-desktop
@@ -30,6 +30,6 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 
 ## How to execute tests
 Using commandline from project root:
-   * ```robot -d results tests\healenium_test.robot```
+   * ```robot -d results tests/healenium_test.robot```
 
 To see the test execution, you can open http://localhost:8086 in your browser (replace localhost by the name of your server if running remotely)

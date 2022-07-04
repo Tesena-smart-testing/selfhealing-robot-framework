@@ -5,3 +5,6 @@ selenium-screenshot-*.png
 .idea
 *.pyc
 venv
+
+# MacOs specifics
+.DS_Store
