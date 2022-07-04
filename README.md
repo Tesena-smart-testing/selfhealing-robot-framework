@@ -19,7 +19,7 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
    * ```pip install -r requirements.txt```
 7. install and **run Docker Desktop**: https://www.docker.com/products/docker-desktop
 8. in the project directory, start commandline terminal and **start the Healenium Docker containers** using following commands:
-   * ```docker-compose up -d``` - download Docker images and create containers
+   * ```docker-compose -f docker-compose-selenium-v3.yaml up -d``` - download Docker images and create containers
    * ```docker ps``` - list the created containers
 9. verify that following **containers are up and running** (either in the previous terminal output or directly in Docker Desktop client): 
    * healenium/hlm-backend 
