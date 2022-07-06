@@ -1,18 +1,38 @@
 version: "3.9"
-services:
 
+services:
   db:
     image: postgres:11-alpine
     ports:
       - "5432:5432"
-    # Comment out following lines (volumes) when you run on macOs Docker Desktop
     volumes:
-      - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./healenium_db:/var/lib/postgresql/data
     restart: always
     environment:
       - POSTGRES_DB=healenium
       - POSTGRES_USER=healenium_user
       - POSTGRES_PASSWORD=YDk2nmNs4s9aCP6K
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d healenium -U healenium_user"]
+      interval: 10s
+      timeout: 120s
+      retries: 10
+    networks:
+      - healenium
+
+  dbinit:
+    image: postgres:11-alpine
+    environment:
+      PGUSER: healenium_user
+      PGPASSWORD: YDk2nmNs4s9aCP6K
+      PGDATABASE: healenium
+      PGHOST: db
+    volumes:
+      - ./db/sql/init.sql:/var/lib/postgresql/init.sql
+    depends_on:
+      db:
+        condition: service_healthy
+    command: psql -f /var/lib/postgresql/init.sql
     networks:
       - healenium
 
@@ -41,31 +61,70 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:0.2.5
+    image: healenium/hlm-proxy:1.0.0
     container_name: hlm-proxy
     volumes:
       - docker-log-volume:/var/log/dockerlogs
     ports:
       - "8085:8085"
     environment:
-      - "recovery-tries=1"
-      - "score-cap=.6"
-      - "heal-enabled=true"
-#      - SELENIUM_HOST=hlm-selenium-webview
-#      - HEALENIUM_HOST=healenium
-#      - IMITATE_HOST=selector-imitator
+      - RECOVERY_TRIES=1
+      - SCORE_CAP=.6
+      - HEAL_ENABLED=true
+      - SELENIUM_HOST=selenium-hub
+      - HEALENIUM_HOST=healenium
+      - IMITATE_HOST=selector-imitator
+      - SELENIUM_URL=/wd/hub
     networks:
       - healenium
 
-  hlm-selenium-webview:
-    image: healenium/hlm-selenium-4-standalone-tigervnc:firefox98.0.1_chrome99.0.4844.82_edge99.0.1150.46
-    restart: on-failure
-    container_name: hlm-selenium-webview
+  # Change set up in .env ${CHROME_NODE_IMAGE} to the image you want to use. Mac M1 CPUs require different images.
+  chrome:
+    image: ${CHROME_NODE_IMAGE}
+    container_name: node-chrome
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - healenium
+
+  edge:
+    image: selenium/node-edge:102.0
+    container_name: node-edge
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - healenium
+
+  firefox:
+    image: selenium/node-firefox:101.0
+    container_name: node-firefox
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - healenium
+
+  selenium-hub:
+    image: selenium/hub:4.3.0
+    container_name: selenium-hub
     ports:
-      - "8086:6080"
+      - "4442:4442"
+      - "4443:4443"
       - "4444:4444"
-    volumes:
-      - docker-log-volume:/var/log/dockerlogs
     networks:
       - healenium
 
@@ -74,4 +133,3 @@ volumes:
 
 networks:
   healenium:
-  

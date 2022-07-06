@@ -20,30 +20,22 @@ We would be happy to know your comments or issues on following e-mail: lucie.lav
 3. **install required libraries** using pip:
    - `pip install -r requirements.txt`
 4. install and **run Docker Desktop**: https://www.docker.com/products/docker-desktop
-5. in the project directory, start commandline terminal and **start the Healenium Docker containers** using following commands:
+5. modify `.env` file to use proper image - Mac M1 users need to use different image
+6. in the project directory, start commandline terminal and **start the Healenium Docker containers** using following commands:
+
    - `docker-compose up -d` - download Docker images and create containers
    - `docker ps` - list the created containers
 
-Before running `docker-compose up -d`` on MacOs comment out lines 9 and 10:
-
-```yaml
-volumes:
-  - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-```
-
-New version of the lines should look like:
-
-```yaml
-# volumes:
-#   - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-```
-
-9. verify that following **containers are up and running** (either in the previous terminal output or directly in Docker Desktop client):
-   - healenium/hlm-backend
-   - postgres:11-alpine
+7. verify that following **containers are up and running** (either in the previous terminal output or directly in Docker Desktop client):
    - healenium/hlm-proxy
-   - healenium/hlm-selenium-4-standalone-xpra
+   - healenium/hlm-backend
    - healenium/hlm-selector-imitator
+   - selenium/hub
+   - selenium/node-chrome
+   - selenium/node-firefox
+   - selenium/node-edge
+   - postgres:11-alpine
+   - postgres:11-alpine (exited)
 
 ## How to execute tests
 
@@ -51,4 +43,9 @@ Using commandline from project root:
 
 - `robot -d results tests/healenium_test.robot`
 
-To see the test execution, you can open http://localhost:8086 in your browser (replace localhost by the name of your server if running remotely)
+To see the test execution, you can open http://localhost:4444 in your browser
+
+# Troubleshooting
+
+In case you are getting error: `ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))` run sample tests with direct connection to selenium grid: `${selenium_grid_url} http://localhost:4444`.
+It has to result for all browsers with first test passed and second test failed.
