@@ -6,5 +6,7 @@ selenium-screenshot-*.png
 *.pyc
 venv
 
+healenium_db
+
 # MacOs specifics
 .DS_Store
